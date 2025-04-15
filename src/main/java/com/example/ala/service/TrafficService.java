@@ -13,13 +13,19 @@ public class TrafficService {
 
     @Transactional
     public void visit() {
-        Traffic traffic = trafficRepository.findById(1L).orElseThrow(); // 고정 ID
-        traffic.visit(); // 증가
+        Traffic traffic = trafficRepository.findById(1L)
+                .orElseGet(() -> {
+                    Traffic newTraffic = new Traffic();
+                    return trafficRepository.save(newTraffic);
+                });
+        traffic.visit();
     }
 
     @Transactional
     public void download() {
-        Traffic traffic = trafficRepository.findById(1L).orElseThrow(); // 고정 ID
+        Traffic traffic = trafficRepository.findById(1L)
+                .orElseGet(() -> trafficRepository.save(new Traffic()));
         traffic.download();
     }
+
 }
