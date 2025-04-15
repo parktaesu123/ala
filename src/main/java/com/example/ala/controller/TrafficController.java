@@ -2,6 +2,7 @@ package com.example.ala.controller;
 
 import com.example.ala.service.TrafficService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TrafficController {
     private final TrafficService trafficService;
 
-    @PostMapping("/visit")
+    @GetMapping("/visit")
     public void countVisit() {
         trafficService.visit();
     }
