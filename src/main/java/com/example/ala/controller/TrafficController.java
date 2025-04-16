@@ -16,7 +16,7 @@ public class TrafficController {
         trafficService.visit();
     }
 
-    @PostMapping("/download")
+    @GetMapping("/download")
     public void countDownload() {
         trafficService.download();
     }
