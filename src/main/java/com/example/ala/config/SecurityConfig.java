@@ -28,7 +28,7 @@ public class SecurityConfig {
         public CorsConfigurationSource corsConfigurationSource() {
             CorsConfiguration config = new CorsConfiguration();
 
-            config.setAllowedOrigins(List.of("http://localhost:3000")); // 프론트 주소
+            config.setAllowedOrigins(List.of("http://localhost:3000", "https://ala-final.vercel.app/")); // 프론트 주소
             config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
             config.setAllowedHeaders(List.of("*"));
             config.setAllowCredentials(true); // 쿠키 포함 허용
