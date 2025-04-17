@@ -15,7 +15,7 @@ public class TrafficController {
     private final TrafficService trafficService;
     private final QueryTrafficService queryTrafficService;
 
-    @GetMapping("")
+    @GetMapping
     public void countVisit() {
         trafficService.visit();
     }
